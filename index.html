@@ -6,57 +6,61 @@
 
 
 <body>
-	<div>
-	<h4>Friis Transmission Power / Range Calculator<h4>
-	
-		<div> Calculate for: 
-		<select id='calcOption'> <option value='P_RX'>Received Power</option> <option value='Range'>Range</option> </select> </div>
-	
-		<div>
-			Frequency: <input id='freqVal' type='text'></input> 
-			<select> <option id='freqOption' value='GHz'>GHz</option> <option value='MHz'>MHz</option> <option value='KHz'>KHz</option> </select>
-		</div>
-		
-		<div>
-			Tx Gain (dBi): <input id='txGainVal' type='text'></input> 
-		</div>
-		
-		<div>
-			Tx Power: <input id='txPwrVal' type='text'></input> 
-			<select id='txPwrOption'> <option value='GHz'>dBm</option> <option value='MHz'>W</option> </select>
-		</div>	
-		
-		<div>
-			Rx Gain (dBi): <input id='rxGainVal' type='text'></input>
-		</div>
-		
-		<div id='rxSenDiv' style='display:none'>
-			Rx Sensitivity: <input id='rxSenVal' type='text'></input>
-		</div>
-		
-		<div id='rangeDiv'>
-			Range: <input id='rxSenVal' type='text'></input> 
-			<select id='rangeOptions'> <option value='Feet'>Feet</option> <option value='Meter'>Meter</option> </select>
-		</div>
-		
-		<div>
-			Path Loss (dB): <input id='pathLoss' type='text'></input>
-		</div>
-		
-		<button id='calcNow'>Calculate</button>
-		
-		<div id='rxPwrCalcDiv'>
-			Received Power: <input type='text'></input> 
-			<select id='rxPwrCalcOption'> <option value='GHz'>dBm</option> <option value='MHz'>W</option> </select> 
-		</div>
-		
-		<div id='rangeCalcDiv' style='display:none'> 
-			Range: <input type='text'></input> 
-			<select id='rxRangeCalcOption'> <option value='GHz'>dBm</option> <option value='MHz'>W</option> </select>
-		</div>
-		
+	<div id='contentBody'>
+	    <h4>Friis Transmission Power / Range Calculator:</h4>
+        <div>
+            <div>
+                <span class='l1'>Calculate for:</span> 
+                <select id='calcOption'> <option value='P_RX'>Received Power</option> <option value='Range'>Range</option> </select>
+            </div>
+        
+            <div>
+                <span class='l1'>Frequency:</span> <input id='freqVal' type='text' class="in1"></input> 
+                <select id='freqOption' class='opt1'> <option value='GHz'>GHz</option> <option value='MHz'>MHz</option> <option value='KHz'>KHz</option> </select>
+            </div>
+            
+            <div>
+                <span class='l1'>Tx Gain (dBi):</span> <input id='txGainVal' type='text' class="in1"></input> 
+            </div>
+            
+            <div>
+                <span class='l1'>Tx Power:</span> <input id='txPwrVal' type='text' class="in1"></input> 
+                <select id='txPwrOption' class='opt1'> <option value='dBm'>dBm</option> <option value='W'>W</option> </select>
+            </div>	
+            
+            <div>
+                <span class='l1'>Rx Gain (dBi):</span> <input id='rxGainVal' type='text' class="in1"></input>
+            </div>
+            
+            <div id='rxSenDiv' style='display:none'>
+                <span class='l1'>Rx Sensitivity:</span> <input id='rxSenVal' type='text' class="in1"></input> <select id='rxPwrOption' class='opt1'> <option value='dBm'>dBm</option> <option value='W'>W</option> </select>
+            </div>
+            
+            <div id='rangeDiv'>
+                <span class='l1'>Range:</span> <input id='rangeVal' type='text' class="in1"></input> 
+                <select id='rangeOptions' class='opt1'> <option value='Meter'>Meter</option> <option value='Feet'>Feet</option> </select>
+            </div>
+            
+            <div>
+                <span class='l1'>Path Loss (dB):</span> <input id='pathLoss' type='text' value="0" class="in1"></input>
+            </div>
+            
+            <br>
+            
+            <div id='rxPwrCalcDiv'>
+                <span class='l1 outV'>Received Power:</span> <input id='rxPwrCalc' type='text' class="in1"></input> 
+                <select id='rxPwrCalcOption' class='opt1'> <option value='dBm'>dBm</option> <option value='W'>W</option> </select> 
+            </div>
+            
+            <div id='rangeCalcDiv' style='display:none'> 
+                <span class='l1 outV'>Range:</span> <input id='rangeOutputVal' type='text' class="in1"></input> 
+                <select id='rxRangeCalcOption' class='opt1'> <option value='Meter'>Meters</option> <option value='Feet'>Feet</option>  </select>
+            </div>
+        </div><br>
+        <div class='desc'>
+            This calculator uses the <a href='https://en.wikipedia.org/wiki/Friis_transmission_equation'>Friis Transmission Equation</a> for calculating RF power or RF range. This is the standard equation used when calculating link budgets.
+        </div>	
 	</div>
-	
 </body>
 
 

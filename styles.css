@@ -1,0 +1,48 @@
+
+body{
+    font-family: tahoma;
+    font-size: 12px;
+    font-weight: normal; 
+    background: radial-gradient(farthest-corner at 50% 0px ,#d0d0d0 10%, #929292 100%);   
+}
+
+.l1{
+    width:120px;
+    display:inline-block;
+    text-align: right;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.in1{
+    width: 150px;
+    height:27px;
+    padding-left: 3px;
+}
+
+.opt1{
+    height:27px;
+    width: 70px;
+}
+
+.outV{
+    color: #004c90;
+}
+
+#calcOption{
+    height:27px; 
+    width: 150px;
+}
+
+#contentBody{
+    margin: 0 auto;
+    width: 500px;
+    background-color: #FFF;
+    padding: 5 30 30 30;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+.desc{
+    font-size:14px;
+}
