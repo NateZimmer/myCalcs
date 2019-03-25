@@ -57,8 +57,16 @@ body{
         width:100%;
         border-radius: 0;
         box-shadow: 0;
-
-
     }
+
+
         
+}
+
+
+@media screen and (max-width: 400px) {
+    .l1{
+        display: block;
+        line-height: 20px;
+    }
 }
