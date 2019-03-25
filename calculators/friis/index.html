@@ -1,7 +1,7 @@
 <html>
 
 <head>
-     <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="../shared/styles.css">
      <title>Friis Calc</title>
      <meta name="viewport" content="initial-scale=1,user-scalable=no,width=device-width">
 </head>
@@ -9,7 +9,7 @@
 
 <body>
 	<div id='contentBody'>
-	    <h4>Friis Transmission Power / Range Calculator:</h4>
+	    <h4>Friis Transmission Power / Range Calculator:</h4> <hr>
         <div>
             <div>
                 <span class='l1'>Calculate for:</span> 
@@ -47,7 +47,7 @@
                 <span class='l1'>Other Loss (dB):</span> <input id='pathLoss' type='text' value="0" class="in1"></input>
             </div>
             
-            <br>
+            <br><hr>
             
             <div id='rxPwrCalcDiv'>
                 <span class='l1 outV'>Received Power:</span> <input id='rxPwrCalc' type='text' class="in1"></input> 
@@ -60,7 +60,7 @@
             </div>
         </div><br>
         <div class='desc'>
-            This calculator uses the <a href='https://en.wikipedia.org/wiki/Friis_transmission_equation'>Friis Transmission Equation</a> for calculating RF power or RF range. Often this equation is used when calculating link budgets. The following equation is the specific equation used for calculating range: 
+            This calculator uses the <a href='https://en.wikipedia.org/wiki/Friis_transmission_equation'>Friis Transmission Equation</a> for calculating RF power or RF range. Often this equation is used when calculating link budgets. The following equation demonstrates how range is calculated: 
 		</div>
 		<div style='text-align:center'><br>
 		<img src='friis.png' title='\\
@@ -76,7 +76,17 @@ r = 10^\frac{P_{TX}-P_{RX} + G_t + G_r -20 \cdot log_{10}(freq) - 147.5582 - L_P
         </div>
         <br>
         <div class='desc'>
-            Source for this calculator can be found <b><a href='https://github.com/NateZimmer/myCalcs'>here</a></b>
+            Note, this link budget formula is a best case estimate with the following assumptions: 
+            <ul>
+                <li>Antennas are line-of-sight</li>
+                <li>Antennas are the same polarization</li>
+                <li>Antennas are oriented the same</li>
+                <li>Antennas are sufficiently above the fresnel zone</li>
+                <li>Estimates are for the far field with regards to wavelength</li>
+            </ul>
+        </div>
+        <div>
+            Source for this calculator and others can be found <b><a href='https://github.com/NateZimmer/myCalcs'>here</a></b>.
         </div>
         
 	</div>
