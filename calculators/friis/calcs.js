@@ -40,7 +40,7 @@ function calcOutput(){
 
     if(selectOutText == 'Received Power'){
         var pwr = 10*Math.log10(txPwr)+ 30 + txGain + rxGain + 20*Math.log10(c/(4*pi*rangeInput*freq)) - pathLoss;
-        var unit = document.querySelector('#rxPwrCalcOption');
+        var unit = document.querySelector('#rxPwrCalcOption').value;
         pwr = unit == 'W' ? Math.pow(10,(pwr-30)/10) : pwr;
         document.querySelector('#rxPwrCalc').value = pwr;
     }else{
