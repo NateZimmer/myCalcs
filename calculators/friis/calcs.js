@@ -61,7 +61,7 @@ function handleQueryStr(){
     for(inputDiv of inputs){
         var id = inputDiv.id;
         var val = inputDiv.value;
-        if(val.length>0){
+        if(val.length>0 && (val !='NaN')){
             obj[id]=val;
         }
     }
