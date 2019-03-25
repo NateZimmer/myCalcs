@@ -60,7 +60,19 @@
             </div>
         </div><br>
         <div class='desc'>
-            This calculator uses the <a href='https://en.wikipedia.org/wiki/Friis_transmission_equation'>Friis Transmission Equation</a> for calculating RF power or RF range. Often this equation is used when calculating link budgets.
+            This calculator uses the <a href='https://en.wikipedia.org/wiki/Friis_transmission_equation'>Friis Transmission Equation</a> for calculating RF power or RF range. Often this equation is used when calculating link budgets. The following equation is the specific equation used for calculating range: 
+		</div>
+		<div style='text-align:center'><br>
+		<img src='friis.png' title='\\
+r = 10^\frac{P_{TX}-P_{RX} + G_t + G_r -20 \cdot log_{10}(freq) - 147.5582 - L_P}{20}'></img> <br><br>
+		<img src='units.png' title='\\
+\\ r = \quad Range \ (m)
+\\ P_{Tx} = \quad Transmit \ Power \ (dBm) 
+\\ P_{Rx} = \quad Receiver \ Sensitivity \ (dBm) 
+\\ freq = \quad Frequency (Hz)
+\\ G_r = \quad Gain \ Receiver \ (dBi)
+\\ G_t = \quad Gain \ Transmitter \ (dBi)
+\\ L_P = \quad Other \ Path \ Loss \ (dB)'></img>
         </div>
         <br>
         <div class='desc'>

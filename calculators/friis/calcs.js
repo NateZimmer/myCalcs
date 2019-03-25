@@ -35,6 +35,7 @@ function calcOutput(){
     var rxPwrSen = getRxPwr();
     var rangeInput = getRange();
     var pathLoss = getPathLoss();
+    pathLoss = pathLoss == NaN ? 0 : pathLoss; // Parameter is optional and shouldn't brick calc
     var calcOptionDiv = document.querySelector('#calcOption')
     var selectOutText = calcOptionDiv.options[calcOptionDiv.selectedIndex].innerHTML;
 
