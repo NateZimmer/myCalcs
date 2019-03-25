@@ -2,6 +2,29 @@ var c = 299792458;
 var pi = 3.14159265359;
 
 
+function objToQuery(obj){
+    var qStr = '';
+    for(prop in obj){
+        qStr += prop + '=' + obj[prop] + '&';  
+    }
+    qStr = qStr.substr(0,qStr.length - 1);
+    window.history.pushState("", "", '?' + qStr);
+}
+
+
+function queryToObj(){
+    var obj = {};
+    var Qs = window.location.search.substr(1).split('&');
+    for(var pair of Qs){
+        var name = pair.split('=')[0];
+        var value = pair.split('=')[1];
+        if(name != undefined && value != undefined){
+            obj[name]=value;
+        }
+    }
+    return obj;
+}
+
 
 function calcOutput(){
     console.log('Attempting to calc output');
@@ -27,7 +50,33 @@ function calcOutput(){
         rVal = rVal * unitFactor;
         document.querySelector('#rangeOutputVal').value = rVal.toString();
     }
+    handleQueryStr();
  
+}
+
+
+function handleQueryStr(){
+    var inputs = document.querySelectorAll('.in1');
+    var obj = {};
+    for(inputDiv of inputs){
+        var id = inputDiv.id;
+        var val = inputDiv.value;
+        if(val.length>0){
+            obj[id]=val;
+        }
+    }
+
+    var selects = document.querySelectorAll('.opt1');
+
+    for(selectDiv of selects){
+        if(selectDiv.selectedIndex != 0){
+            var id = selectDiv.id;
+            var val = selectDiv.selectedIndex.toFixed();
+            obj[id]=val;
+        }
+    }
+
+    objToQuery(obj);
 }
 
 
@@ -160,4 +209,24 @@ function onLoad(){
     }
 }
 
+
+function parseQueryUrl(){
+    var obj = queryToObj();
+    console.log('Parsing Query Obj');
+    for(prop in obj){
+        var div = document.querySelector('#'+ prop);
+        if(div != undefined){
+            if(div.nodeName == 'INPUT'){
+                div.value = obj[prop];
+            }else if(div.nodeName == 'SELECT'){
+                div.selectedIndex=parseInt(obj[prop]);
+                div.dispatchEvent(new Event('change'));
+            }
+        }
+    }
+}
+
+
 onLoad();
+
+parseQueryUrl();

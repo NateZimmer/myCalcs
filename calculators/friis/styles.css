@@ -4,6 +4,7 @@ body{
     font-size: 12px;
     font-weight: normal; 
     background: radial-gradient(farthest-corner at 50% 0px ,#d0d0d0 10%, #929292 100%);   
+    margin: 0;
 }
 
 .l1{
@@ -45,4 +46,19 @@ body{
 
 .desc{
     font-size:14px;
+}
+
+
+@media screen and (max-width: 600px) {
+    #contentBody{
+        margin: 0 auto;
+        background-color: #FFF;
+        padding: 10px;
+        width:100%;
+        border-radius: 0;
+        box-shadow: 0;
+
+
+    }
+        
 }
