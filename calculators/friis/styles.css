@@ -36,7 +36,7 @@ body{
 }
 
 #contentBody{
-    margin: 0 auto;
+    margin: 20px auto auto auto;
     width: 500px;
     background-color: #FFF;
     padding: 5 30 30 30;
